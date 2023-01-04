@@ -22,12 +22,14 @@ public class Main {
         printBasket(products);
     }
 
+   //метод вывода товаров и стоимости
     private static void printProducts(Product[] products) {
         for (Product product : products) {
         System.out.println(product + " Стоимость " + product.getPrice() + " " + RUB);
         }
     }
 
+   //Счетсик корзины
     private static void printBasket(Product[] products) {
         int costProducts = 0;
         System.out.println("Ваша корзина: ");
