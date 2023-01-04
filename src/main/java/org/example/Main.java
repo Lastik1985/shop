@@ -18,14 +18,13 @@ public class Main {
                 int productNumber = Integer.parseInt(parts[0]) - 1;
                 products[productNumber].setCount(Integer.parseInt(parts[1]));
             }
-        printProducts(products);
+
         printBasket(products);
     }
 
     private static void printProducts(Product[] products) {
-        System.out.println("Список возможных товаров для покупки: ");
-        for (int i = 0; i < products.length; i++) {
-            System.out.println((i + 1) + ". " + products[i]);
+        for (Product product : products) {
+        System.out.println(product + " Стоимость " + product.getPrice() + " " + RUB);
         }
     }
 
@@ -35,9 +34,9 @@ public class Main {
         for (Product product : products) {
             if (product.getCount() != 0) {
                 costProducts += product.getCount() * product.getPrice();
-                System.out.println(product + " 'количество'= " + product.getCount() + " шт."
-                        + " 'цена'= " + product.getPrice() + " " + RUB
-                        + " 'стоимость'= " + product.getCount() * product.getPrice() + " " + RUB);
+                System.out.println(product + " Количество = " + product.getCount() + " шт."
+                        + " Цена = " + product.getPrice() + " " + RUB
+                        + " Стоимость = " + product.getCount() * product.getPrice() + " " + RUB);
             }
         }
         System.out.println("Итого: " + costProducts + " " + RUB);
